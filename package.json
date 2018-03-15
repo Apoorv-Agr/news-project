@@ -13,9 +13,12 @@
     "babel-preset-react": "^6.24.1",
     "babelify": "^8.0.0",
     "create-react-class": "^15.6.3",
+    "history": "^1.13.1",
     "react": "^16.2.0",
     "react-create-class": "^1.0.0",
     "react-dom": "^16.2.0",
+    "react-router": "^4.2.0",
+    "react-router-dom": "^4.2.2",
     "watchify": "^3.11.0"
   },
   "devDependencies": {},

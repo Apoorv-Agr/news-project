@@ -1,14 +1,11 @@
 const React = require('react');
 const ReactCreateClass = require('create-react-class');
 
-var test = ReactCreateClass({
+var Page2 = ReactCreateClass({
   render: function(){
     return(
-      <div>
-        <h3>{this.props.heading}</h3>
-      </div>
+      <h1>Page 2</h1>
     );
   }
 });
-
-module.exports = test;
+module.exports = Page2;

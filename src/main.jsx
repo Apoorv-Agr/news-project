@@ -1,5 +1,8 @@
 const React = require('react');
 const ReactCreateClass = require('create-react-class');
+const ReactRouter = require('react-router-dom');
 const ReactDOM = require('react-dom');
-const Test = require('./components/test.jsx');
-ReactDOM.render(<Test heading='My First heading from Scratch'/>,document.getElementById('test'));
+const Routes = require('./Routes.jsx');
+
+// const Test = require('./components/test.jsx');
+ReactDOM.render(Routes , document.getElementById('test'));
