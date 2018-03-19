@@ -23027,29 +23027,47 @@ var ReactRouter = require('react-router-dom');
 var Router = require('react-router-dom').BrowserRouter;
 var Route = require('react-router-dom').Route;
 const browserHistory = require('react-router-dom').browserHistory;
+const HashRouter = require('react-router-dom').HashRouter;
 var Switch = require('react-router-dom').Switch;
 
 var Base = require('./components/Base.jsx');
-var Page1 = require('./components/Page1.jsx');
-var Page2 = require('./components/Page2.jsx');
+
+// Some Working Code
+// var Routes = (
+//   <HashRouter>
+//     <Switch>
+//       <Route exact path="/" component={Base}/>
+//       <Route path="/about" component={Page1}/>
+//       <Route path="/user" component={Page2}/>
+//     </Switch>
+//   </HashRouter>
+// );
 
 var Routes = React.createElement(
-  Router,
-  { history: browserHistory },
-  React.createElement(
-    Switch,
-    null,
-    React.createElement(Route, { exact: true, path: '/', component: Page1 }),
-    React.createElement(Route, { path: '/Page1', component: Base })
-  )
+  HashRouter,
+  null,
+  React.createElement(Route, { exact: true, path: '', component: Base })
 );
+
 module.exports = Routes;
 
-},{"./components/Base.jsx":77,"./components/Page1.jsx":78,"./components/Page2.jsx":79,"react":72,"react-router-dom":44}],77:[function(require,module,exports){
+},{"./components/Base.jsx":77,"react":72,"react-router-dom":44}],77:[function(require,module,exports){
 const React = require('react');
 const ReactCreateClass = require('create-react-class');
+const ReactRouter = require('react-router-dom');
+const Router = require('react-router-dom').BrowserRouter;
+const Route = require('react-router-dom').Route;
+const browserHistory = require('react-router-dom').browserHistory;
+const HashRouter = require('react-router-dom').HashRouter;
+const Switch = require('react-router-dom').Switch;
+const Link = require('react-router-dom').Link;
+
+var Page1 = require('./Page1.jsx');
+var Page2 = require('./Page2.jsx');
+
 var Base = ReactCreateClass({
   render: function () {
+    console.log(this.props.match);
     return React.createElement(
       'div',
       null,
@@ -23058,6 +23076,8 @@ var Base = ReactCreateClass({
         null,
         'Header'
       ),
+      React.createElement(Route, { exact: true, path: '/user', component: Page1 }),
+      React.createElement(Route, { exact: true, path: '/secondLink', component: Page2 }),
       React.createElement(
         'h1',
         null,
@@ -23068,12 +23088,13 @@ var Base = ReactCreateClass({
 });
 module.exports = Base;
 
-},{"create-react-class":2,"react":72}],78:[function(require,module,exports){
+},{"./Page1.jsx":78,"./Page2.jsx":79,"create-react-class":2,"react":72,"react-router-dom":44}],78:[function(require,module,exports){
 const React = require('react');
 const ReactCreateClass = require('create-react-class');
 
 var Page1 = ReactCreateClass({
   render: function () {
+    console.log(this.props.match);
     return React.createElement(
       'div',
       null,
@@ -23094,9 +23115,13 @@ const ReactCreateClass = require('create-react-class');
 var Page2 = ReactCreateClass({
   render: function () {
     return React.createElement(
-      'h1',
+      'div',
       null,
-      'Page 2'
+      React.createElement(
+        'h1',
+        null,
+        'Page 2'
+      )
     );
   }
 });

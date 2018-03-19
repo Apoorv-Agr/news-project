@@ -3,18 +3,28 @@ var ReactRouter = require('react-router-dom');
 var Router = require('react-router-dom').BrowserRouter;
 var Route = require('react-router-dom').Route;
 const browserHistory = require('react-router-dom').browserHistory;
+const HashRouter = require('react-router-dom').HashRouter;
 var Switch = require('react-router-dom').Switch;
 
 var Base = require('./components/Base.jsx');
-var Page1 = require('./components/Page1.jsx');
-var Page2 = require('./components/Page2.jsx');
+
+
+// Some Working Code
+// var Routes = (
+//   <HashRouter>
+//     <Switch>
+//       <Route exact path="/" component={Base}/>
+//       <Route path="/about" component={Page1}/>
+//       <Route path="/user" component={Page2}/>
+//     </Switch>
+//   </HashRouter>
+// );
 
 var Routes = (
-  <Router history={browserHistory}>
-      <Switch>
-        <Route exact path="/" component={Page1}/>
-        <Route path="/Page1" component={Base}/>
-      </Switch>
-  </Router>
+  <HashRouter>
+      <Route exact path="" component={Base}/>
+  </HashRouter>
 );
+
+
 module.exports = Routes;
