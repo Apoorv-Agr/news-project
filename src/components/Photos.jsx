@@ -1,14 +1,13 @@
 const React = require('react');
 const ReactCreateClass = require('create-react-class');
 
-var Page1 = ReactCreateClass({
-  render: function() {
-    console.log(this.props.match);
+var Photos = ReactCreateClass({
+  render: function(){
     return(
       <div>
-        <h1>Page 1</h1>
+        <h1>Photos Will go here</h1>
       </div>
     );
   }
 });
-module.exports = Page1;
+module.exports = Photos;

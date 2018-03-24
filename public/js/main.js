@@ -23062,57 +23062,248 @@ const HashRouter = require('react-router-dom').HashRouter;
 const Switch = require('react-router-dom').Switch;
 const Link = require('react-router-dom').Link;
 
-var Page1 = require('./Page1.jsx');
-var Page2 = require('./Page2.jsx');
+var News = require('./News.jsx');
+var Photos = require('./Photos.jsx');
 
 var Base = ReactCreateClass({
   render: function () {
     console.log(this.props.match);
+    var lastBoxTextFont = {
+      color: '#ffffff'
+    };
     return React.createElement(
       'div',
-      null,
+      { style: lastBoxTextFont },
       React.createElement(
-        'h1',
+        'header',
         null,
-        'Header'
+        'Country News'
       ),
-      React.createElement(Route, { exact: true, path: '/user', component: Page1 }),
-      React.createElement(Route, { exact: true, path: '/secondLink', component: Page2 }),
       React.createElement(
-        'h1',
+        'h3',
         null,
-        'Footer'
-      )
+        'Top Stories in my country'
+      ),
+      React.createElement(
+        'span',
+        null,
+        React.createElement(
+          Link,
+          { to: 'news', style: lastBoxTextFont },
+          'NEWS'
+        )
+      ),
+      '\xA0',
+      React.createElement(
+        'span',
+        null,
+        React.createElement(
+          Link,
+          { to: 'photos', style: lastBoxTextFont },
+          'PHOTOS'
+        )
+      ),
+      React.createElement(Route, { exact: true, path: '/news', component: News }),
+      React.createElement(Route, { exact: true, path: '/photos', component: Photos })
     );
   }
 });
 module.exports = Base;
 
-},{"./Page1.jsx":78,"./Page2.jsx":79,"create-react-class":2,"react":72,"react-router-dom":44}],78:[function(require,module,exports){
+},{"./News.jsx":78,"./Photos.jsx":79,"create-react-class":2,"react":72,"react-router-dom":44}],78:[function(require,module,exports){
 const React = require('react');
 const ReactCreateClass = require('create-react-class');
 
-var Page1 = ReactCreateClass({
+var News = ReactCreateClass({
   render: function () {
     console.log(this.props.match);
+    const textColor = {
+      color: '#615e5e'
+    };
+    const bckColor = {
+      backgroundColor: '#ffffff'
+    };
+    const mainHead = {
+      color: 'rgb(0, 0, 0)',
+      fontWeight: '700'
+    };
+    const subHeadingTextColor = {
+      color: 'rgb(0, 0, 0)'
+    };
+    const locationStyle = {
+      color: '#afafaf',
+      fontWeight: '700'
+    };
+    const profPicStyle = {
+      color: 'rgb(0, 0, 0)',
+      padding: '1.5% 0% 0% 5%'
+    };
     return React.createElement(
       'div',
-      null,
+      { className: 'container' },
       React.createElement(
-        'h1',
-        null,
-        'Page 1'
+        'div',
+        { className: 'row' },
+        React.createElement('div', { className: 'hidden-xs col-sm-1' }),
+        React.createElement(
+          'div',
+          { className: 'hidden-xs col-sm-10' },
+          React.createElement(
+            'div',
+            { className: 'panel' },
+            React.createElement(
+              'div',
+              { className: 'row' },
+              React.createElement(
+                'div',
+                { className: 'hidden-xs col-sm-2', style: profPicStyle },
+                'ProfPic1'
+              ),
+              React.createElement(
+                'div',
+                { className: 'hidden-xs col-sm-9' },
+                React.createElement(
+                  'div',
+                  { className: 'panel-heading' },
+                  React.createElement(
+                    'div',
+                    { style: mainHead },
+                    'Obesity in America'
+                  ),
+                  React.createElement(
+                    'div',
+                    { style: subHeadingTextColor },
+                    'Why are Americans so fat ?'
+                  )
+                ),
+                React.createElement(
+                  'div',
+                  { className: 'panel-body', style: textColor },
+                  React.createElement(
+                    'div',
+                    null,
+                    'asdasdad asdasdad asdasdad asdasdad asdasdad asdasdad asdasdad asdasdad asdasdad asdasdad asdasdad asdasdad asdasdad asdasdad asdasdad asdasdad asdasdad asdasdad asdasdad asdasdad asdasdad asdasdad asdasdad '
+                  ),
+                  React.createElement(
+                    'div',
+                    { className: 'row' },
+                    React.createElement(
+                      'div',
+                      { className: 'hidden-xs col-sm-3' },
+                      'PhotoThumbNail1'
+                    ),
+                    React.createElement(
+                      'div',
+                      { className: 'hidden-xs col-sm-3' },
+                      ' PhotoThumbNail2'
+                    )
+                  ),
+                  React.createElement(
+                    'div',
+                    { className: 'row' },
+                    React.createElement(
+                      'div',
+                      { className: 'hidden-xs col-sm-3', style: locationStyle },
+                      'Xyz, USA'
+                    )
+                  )
+                )
+              ),
+              React.createElement('div', { className: 'hidden-xs col-sm-1' })
+            )
+          )
+        ),
+        React.createElement('div', { className: 'hidden-xs col-sm-1' })
+      ),
+      React.createElement(
+        'div',
+        { className: 'row' },
+        React.createElement('div', { className: 'hidden-xs col-sm-1' }),
+        React.createElement(
+          'div',
+          { className: 'hidden-xs col-sm-10' },
+          React.createElement(
+            'div',
+            { className: 'panel' },
+            React.createElement(
+              'div',
+              { className: 'row' },
+              React.createElement(
+                'div',
+                { className: 'hidden-xs col-sm-2', style: profPicStyle },
+                'ProfPic2'
+              ),
+              React.createElement(
+                'div',
+                { className: 'hidden-xs col-sm-9' },
+                React.createElement(
+                  'div',
+                  { className: 'panel-heading' },
+                  React.createElement(
+                    'div',
+                    { style: mainHead },
+                    'ProfPic2'
+                  ),
+                  React.createElement(
+                    'div',
+                    { style: mainHead },
+                    'UX Designer'
+                  ),
+                  React.createElement(
+                    'div',
+                    { style: subHeadingTextColor },
+                    'log | Smart Software Developemnt Great User Experience'
+                  )
+                ),
+                React.createElement(
+                  'div',
+                  { className: 'panel-body', style: textColor },
+                  React.createElement(
+                    'div',
+                    null,
+                    'sdafkasldfkaslf sdafkasldfkaslf sdafkasldfkaslf sdafkasldfkaslf sdafkasldfkaslf sdafkasldfkaslf sdafkasldfkaslf sdafkasldfkaslf sdafkasldfkaslf sdafkasldfkaslf sdafkasldfkaslf sdafkasldfkaslf sdafkasldfkaslf'
+                  ),
+                  React.createElement(
+                    'div',
+                    { className: 'row' },
+                    React.createElement(
+                      'div',
+                      { className: 'hidden-xs col-sm-3' },
+                      ' Photo ThumbNail 1 '
+                    ),
+                    React.createElement(
+                      'div',
+                      { className: 'hidden-xs col-sm-3' },
+                      ' Photo ThumbNail 2 '
+                    )
+                  ),
+                  React.createElement(
+                    'div',
+                    { className: 'row' },
+                    React.createElement(
+                      'div',
+                      { className: 'hidden-xs col-sm-3', style: locationStyle },
+                      'Xyz, USA'
+                    )
+                  )
+                )
+              ),
+              React.createElement('div', { className: 'hidden-xs col-sm-1' })
+            )
+          )
+        ),
+        React.createElement('div', { className: 'hidden-xs col-sm-1' })
       )
     );
   }
 });
-module.exports = Page1;
+module.exports = News;
 
 },{"create-react-class":2,"react":72}],79:[function(require,module,exports){
 const React = require('react');
 const ReactCreateClass = require('create-react-class');
 
-var Page2 = ReactCreateClass({
+var Photos = ReactCreateClass({
   render: function () {
     return React.createElement(
       'div',
@@ -23120,12 +23311,12 @@ var Page2 = ReactCreateClass({
       React.createElement(
         'h1',
         null,
-        'Page 2'
+        'Photos Will go here'
       )
     );
   }
 });
-module.exports = Page2;
+module.exports = Photos;
 
 },{"create-react-class":2,"react":72}],80:[function(require,module,exports){
 const React = require('react');
